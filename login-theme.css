@@ -1,0 +1,66 @@
+/* Professional FASHION PLACE ERP login interface */
+:root{
+  --login-navy:#07111f;
+  --login-slate:#0f2742;
+  --login-gold:#f5a623;
+  --login-orange:#f97316;
+  --login-text:#0f172a;
+  --login-muted:#64748b;
+}
+#loginScreen{
+  background:linear-gradient(135deg,#07111f 0%,#102a46 52%,#f8fafc 52%,#ffffff 100%) !important;
+  overflow:auto;
+}
+#loginScreen .lg-left{
+  flex:1.15;
+  min-height:100%;
+  padding:clamp(28px,6vw,82px);
+  background:linear-gradient(145deg,rgba(7,17,31,.98),rgba(15,39,66,.96)) !important;
+}
+#loginScreen .lg-left:before{background:#f5a623;opacity:.22;filter:blur(100px)}
+#loginScreen .lg-left:after{background:#f97316;opacity:.18;filter:blur(90px)}
+#loginScreen .lg-brand{margin-bottom:42px;gap:15px}
+#loginScreen .lg-logo{
+  width:58px;height:58px;border-radius:17px;padding:4px;
+  box-shadow:0 14px 35px rgba(245,166,35,.28);
+}
+#loginScreen .lg-brand b{font-size:24px;color:#fff;letter-spacing:.8px}
+#loginScreen .lg-brand span{color:#9fb3c8;font-size:11px;letter-spacing:2.5px}
+#loginScreen .lg-left h1{max-width:560px;font-size:clamp(28px,3.4vw,46px);letter-spacing:-.8px;line-height:1.13}
+#loginScreen .lg-left h1 em{color:#ffc15a}
+#loginScreen .lg-left p{max-width:500px;color:#b8c7d8;font-size:15px;line-height:1.8}
+#loginScreen .lg-points{gap:14px;margin-top:38px}
+#loginScreen .lg-points div{color:#dce8f4}
+#loginScreen .lg-points svg{color:#ffc15a}
+#loginScreen .lg-right{
+  flex:1;min-width:390px;padding:clamp(24px,5vw,70px);
+  background:rgba(255,255,255,.96) !important;
+}
+#loginScreen .lg-card{
+  max-width:430px;padding:38px;border:1px solid #e5eaf0;border-radius:24px;
+  background:rgba(255,255,255,.98);box-shadow:0 24px 70px rgba(15,23,42,.14);
+}
+#loginScreen .lg-card h2{font-size:30px;letter-spacing:-.5px;color:var(--login-text)}
+#loginScreen .lg-card .lg-sub{margin-bottom:30px;color:var(--login-muted)}
+#loginScreen .lg-input{margin-bottom:17px}
+#loginScreen .lg-input input{
+  height:52px;padding-left:45px;border:1px solid #dbe3ec;border-radius:12px;
+  background:#f8fafc;font-size:15px;transition:.2s ease;
+}
+#loginScreen .lg-input input:focus{
+  border-color:var(--login-gold);box-shadow:0 0 0 4px rgba(245,166,35,.14);background:#fff;
+}
+#loginScreen .lg-input svg{color:#8090a2}
+#loginScreen .btn-login{
+  height:52px;border-radius:12px;margin-top:7px;
+  background:linear-gradient(135deg,var(--login-gold),var(--login-orange));
+  box-shadow:0 12px 24px rgba(249,115,22,.22);font-size:15px;
+}
+#loginScreen .btn-login:hover{box-shadow:0 16px 30px rgba(249,115,22,.32)}
+#loginScreen .errbox{border-radius:12px}
+#loginScreen .lg-foot{margin-top:25px;line-height:1.6}
+@media(max-width:992px){
+  #loginScreen{background:#f8fafc !important}
+  #loginScreen .lg-right{min-width:0;padding:22px}
+  #loginScreen .lg-card{padding:28px 22px;border-radius:20px}
+}
