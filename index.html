@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FASHION PLACE ERP — Login</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#0f172a,#1e293b,#0f172a);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.box{background:#fff;border-radius:18px;box-shadow:0 25px 70px rgba(0,0,0,.45);width:100%;max-width:430px;overflow:hidden}
+.top{background:linear-gradient(135deg,#1e293b,#334155);padding:34px 28px 28px;text-align:center;color:#fff}
+.top img{width:74px;height:74px;border-radius:50%;background:#fff;padding:6px;object-fit:contain;margin-bottom:12px}
+.top h1{font-size:21px;letter-spacing:2.5px;font-weight:800}
+.top h2{font-size:11px;letter-spacing:4px;color:#94a3b8;margin-top:5px;font-weight:500}
+.bd{padding:28px}
+label{display:block;font-size:11.5px;font-weight:700;color:#475569;letter-spacing:.6px;margin-bottom:6px;text-transform:uppercase}
+.inp{width:100%;padding:12px 14px;border:2px solid #e2e8f0;border-radius:10px;font-size:14.5px;margin-bottom:16px;outline:none;transition:.15s;font-family:inherit}
+.inp:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.btn{width:100%;padding:14px;border:none;border-radius:10px;background:#2563eb;color:#fff;font-size:15px;font-weight:700;cursor:pointer;letter-spacing:.5px;transition:.15s;font-family:inherit}
+.btn:hover:not(:d){background:#1d4ed8;transform:translateY(-1px)}
+.btn:d{opacity:.6;cursor:wait}
+.err{background:#fef2f2;color:#b91c1c;border-left:4px solid #dc2626;padding:11px 13px;border-radius:8px;font-size:13px;margin-bottom:16px;display:none;font-weight:600}
+.ok{background:#f0fdf4;color:#15803d;border-left:4px solid #16a34a;padding:11px 13px;border-radius:8px;font-size:13px;margin-bottom:16px;display:none;font-weight:600}
+.fw{background:#f8fafc;border-top:1px solid #e2e8f0;padding:15px;text-align:center;font-size:11.5px;color:#64748b}
+.fw a{color:#2563eb;text-decoration:none;font-weight:600}
+.cf{margin-top:12px;display:flex;align-items:center;gap:8px;justify-content:center;font-size:12.5px;color:#475569;cursor:pointer;text-decoration:none;background:#f1f5f9;padding:9px;border-radius:8px;border:1px solid #e2e8f0}
+/* ═══ PRO LOGIN DESIGN ═══ */
+body{background:linear-gradient(135deg,#0b1220,#111c33 45%,#0b1220);position:relative;overflow:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 18% 18%,rgba(37,99,235,.28),transparent 45%),radial-gradient(circle at 82% 75%,rgba(124,58,237,.24),transparent 45%);pointer-events:none}
+.box{position:relative;z-index:1;animation:rise .4s ease;box-shadow:0 30px 80px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.09)}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.top{background:linear-gradient(135deg,#0f172a,#1e3a8a 140%);position:relative;overflow:hidden}
+.top::after{content:"";position:absolute;left:-10%;top:-60%;width:120%;height:180%;background:radial-gradient(closest-side,rgba(59,130,246,.35),transparent);pointer-events:none}
+.top img{position:relative;z-index:1;border:3px solid rgba(255,255,255,.25);box-shadow:0 10px 30px rgba(37,99,235,.45);animation:glow 3s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 10px 30px rgba(37,99,235,.45)}50%{box-shadow:0 10px 42px rgba(124,58,237,.55)}}
+.top h1,.top h2{position:relative;z-index:1}
+.inp{border-radius:12px;padding:13px 15px;background:#f8fafc}
+.inp:focus{background:#fff;box-shadow:0 0 0 4px rgba(37,99,235,.15)}
+.btn{border-radius:12px;background:linear-gradient(135deg,#2563eb,#3b82f6);box-shadow:0 10px 26px rgba(37,99,235,.4);letter-spacing:1px}
+.btn:hover:not(.d){background:linear-gradient(135deg,#1d4ed8,#2563eb);transform:translateY(-2px);box-shadow:0 14px 32px rgba(37,99,235,.5)}
+.err,.ok{border-radius:12px}
+.fw{background:rgba(248,250,252,.9)}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <div class="top">
+    <img src="logo.png" onerror="this.src='logo.svg'" alt="FP">
+    <h1>FASHION PLACE</h1>
+    <h2>ENTERPRISE RESOURCE PLANNING</h2>
+  </div>
+
+  <div class="bd">
+    <div class="err" id="e"></div>
+    <div class="ok" id="o"></div>
+
+    <label>Login ID (Email)</label>
+    <input class="inp" id="em" type="email" placeholder="Enter@email.com" autocomplete="username">
+
+    <label>Password</label>
+    <input class="inp" id="pw" type="password" placeholder="••••••••" autocomplete="current-password">
+
+    <button class="btn" id="go" onclick="login()">LOGIN &rarr;</button>
+  </div>
+
+  <div class="fw">
+    &copy; FASHION PLACE ERP &nbsp;|&nbsp; <a href="dashboard.html"> &rarr;</a><br>Developed by <b>A.A.Q. Solution &amp; Outsourcing</b>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script>
+const CFG={apiKey:"AIzaSyDJsORW6da9s483_0WOB8xvOVoSH0IYmCg",authDomain:"erphubfp.firebaseapp.com",projectId:"erphubfp",storageBucket:"erphubfp.firebasestorage.app",messagingSenderId:"78005918234",appId:"1:78005918234:web:40c523777b1a503eaa4fa3",measurementId:"G-390YVTRPTT"};
+firebase.initializeApp(CFG);
+const auth=firebase.auth(),db=firebase.firestore();
+const $=i=>document.getElementById(i);
+
+const blocked=localStorage.getItem("fp_block");
+if(blocked){$("o").style.display="block";$("o").innerHTML="&#9888; "+blocked;localStorage.removeItem("fp_block")}
+
+function E(msg){$("e").style.display="block";$("e").innerHTML=msg;$("go").classList.remove("d");$("go").innerHTML="LOGIN &rarr;"}
+function NICE(c){
+  return{
+    "auth/invalid-credential":"Incorrect email or password.",
+    "auth/user-not-found":"No login found for this email. Ask Admin to add the employee first.",
+    "auth/wrong-password":"Incorrect password.",
+    "auth/too-many-requests":"Too many attempts. Wait 1-2 minutes and try again.",
+    "auth/user-disabled":"Your login has been blocked. Please contact Admin.",
+    "auth/network-request-failed":"Check your internet connection \u2014 network is not working.",
+    "auth/operation-not-allowed":"Email/Password sign-in is disabled in Firebase. Ask Admin to enable it.",
+    "auth/too-many-requests ": "Please try again later."
+  }[c]||("Error: "+c);
+}
+
+async function login(){
+  const em=$("em").value.trim(),pw=$("pw").value;
+  if(!em||!pw)return E("&#9888; Please enter both email and password.");
+  $("go").classList.add("d");$("go").innerHTML="Checking...";$("e").style.display="none";
+  try{
+    const cr=await auth.signInWithEmailAndPassword(em,pw);
+    const uid=cr.user.uid;
+
+    /* ---- role mirror se role + status ---- */
+    let role="",empId="",name=cr.user.displayName||em.split("@")[0],status="Active",rerr="";
+    const take=d=>{if(!d)return;const rr=String(d.role||"").trim().toLowerCase();if(!role&&rr)role=rr;if(!empId)empId=String(d.empId||"").trim();name=d.name||name;status=String(d.status||"Active").trim()};
+    try{
+      const s=await db.collection("users_by_uid").doc(uid).get();
+      if(s.exists)take(s.data()||{});
+    }catch(e){rerr=e.code||e.message||"err"}
+    if(!role){
+      try{const s1=await db.collection("users").doc(uid).get();if(s1.exists)take(s1.data()||{})}
+      catch(e){rerr=e.code||e.message||"err"}
+    }
+    if(!role){
+      try{
+        const s2=await db.collection("users").where("email","==",em.toLowerCase()).limit(1).get();
+        if(!s2.empty)take(s2.docs[0].data());
+      }catch(e){rerr=e.code||e.message||"err"}
+    }
+    if(!role)role="employee";
+    if(String(status).toLowerCase()==="blocked"||String(status).toLowerCase()==="disabled"){
+      await auth.signOut();
+      localStorage.setItem("fp_block","Your login is <b>Blocked</b>. Please contact Admin.");
+      return E("&#10007; Your login is blocked/disabled.");
+    }
+    if((rerr.indexOf("permission")>=0||rerr.indexOf("PERMISSION")>=0)){
+      E("&#9888; Logged in, but <b>Firestore Rules</b> are not published &#8212; roles cannot be read. Follow the instructions shown on the dashboard.");
+    }
+
+    localStorage.setItem("fp_user",JSON.stringify({uid,email:em,name,role,empId,authUid:uid,roleErr:rerr||""}));
+    location.replace("dashboard.html");
+  }catch(err){E("&#10007; "+NICE(err.code))}
+}
+
+$("em").addEventListener("keydown",e=>{if(e.key==="Enter")$("pw").focus()});
+$("pw").addEventListener("keydown",e=>{if(e.key==="Enter")login()});
+auth.onAuthStateChanged(u=>{if(u&&u.email!==$("em").value&&!$("e").style.display.includes("block"))location.replace("dashboard.html")});
+$("em").focus();
+</script>
+</body>
+</html>
